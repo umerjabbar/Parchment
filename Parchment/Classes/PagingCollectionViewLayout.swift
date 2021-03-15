@@ -400,7 +400,7 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
   private func updateIndicatorLayoutAttributes() {
     guard let currentPagingItem = state.currentPagingItem else { return }
     indicatorLayoutAttributes?.configure(options)
-    
+
     let currentIndexPath = visibleItems.indexPath(for: currentPagingItem)
     let upcomingIndexPath = upcomingIndexPathForIndexPath(currentIndexPath)
     
@@ -490,14 +490,14 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
   }
     
   private func indicatorSpacingForIndex(_ index: Int) -> UIEdgeInsets {
-    if case let .visible(_, _, insets, _) = options.indicatorOptions {
+    if case let .visible(_, _, insets, _, _) = options.indicatorOptions {
       return insets
     }
     return UIEdgeInsets.zero
   }
   
   private func indicatorInsetsForIndex(_ index: Int) -> PagingIndicatorMetric.Inset {
-    if case let .visible(_, _, _, insets) = options.indicatorOptions {
+    if case let .visible(_, _, _, insets, _) = options.indicatorOptions {
       if index == 0 && range.upperBound == 1 {
         return .both(insets.left, insets.right)
       } else if index == range.lowerBound {

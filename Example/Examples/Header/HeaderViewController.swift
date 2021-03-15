@@ -94,7 +94,8 @@ class HeaderViewController: UIViewController {
       height: 1,
       zIndex: Int.max,
       spacing: .zero,
-      insets: .zero
+      insets: .zero,
+        cornerRadius: .zero
     )
     
     // Contrain the paging view to all edges.

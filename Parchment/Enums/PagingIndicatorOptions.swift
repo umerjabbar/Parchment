@@ -6,5 +6,6 @@ public enum PagingIndicatorOptions {
     height: CGFloat,
     zIndex: Int,
     spacing: UIEdgeInsets,
-    insets: UIEdgeInsets)
+    insets: UIEdgeInsets,
+    cornerRadius: CGFloat)
 }
