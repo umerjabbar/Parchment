@@ -490,14 +490,14 @@ open class PagingCollectionViewLayout: UICollectionViewLayout, PagingLayout {
   }
     
   private func indicatorSpacingForIndex(_ index: Int) -> UIEdgeInsets {
-    if case let .visible(_, _, insets, _, _) = options.indicatorOptions {
+    if case let .visible(_, _, insets, _, _, _, _, _, _) = options.indicatorOptions {
       return insets
     }
     return UIEdgeInsets.zero
   }
   
   private func indicatorInsetsForIndex(_ index: Int) -> PagingIndicatorMetric.Inset {
-    if case let .visible(_, _, _, insets, _) = options.indicatorOptions {
+    if case let .visible(_, _, _, insets, _, _, _, _, _) = options.indicatorOptions {
       if index == 0 && range.upperBound == 1 {
         return .both(insets.left, insets.right)
       } else if index == range.lowerBound {

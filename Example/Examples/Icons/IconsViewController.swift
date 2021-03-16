@@ -56,8 +56,11 @@ class IconsViewController: UIViewController {
             zIndex: -10,
             spacing: .zero,
             insets: .zero,
-            cornerRadius: 30
-        )
+            cornerRadius: 30,
+            shadowRadius: 12,
+            shadowOpacity: 0.2,
+            shadowColor: .black,
+            shadowOffset: CGSize(width: 0, height: 4))
         pagingViewController.indicatorColor = .cyan
         pagingViewController.register(IconPagingCell.self, for: IconItem.self)
         pagingViewController.menuItemSize = .fixed(width: 60, height: 60)

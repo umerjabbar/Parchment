@@ -4,11 +4,19 @@ open class PagingIndicatorLayoutAttributes: UICollectionViewLayoutAttributes {
 
     open var backgroundColor: UIColor?
     open var cornerRadius: CGFloat?
+    open var shadowRadius: CGFloat?
+    open var shadowOpacity: CGFloat?
+    open var shadowColor: UIColor?
+    open var shadowOffset: CGSize?
 
     override open func copy(with zone: NSZone? = nil) -> Any {
         let copy = super.copy(with: zone) as! PagingIndicatorLayoutAttributes
         copy.backgroundColor = backgroundColor
         copy.cornerRadius = cornerRadius
+        copy.shadowRadius = shadowRadius
+        copy.shadowOpacity = shadowOpacity
+        copy.shadowColor = shadowColor
+        copy.shadowOffset = shadowOffset
         return copy
     }
 
@@ -24,9 +32,13 @@ open class PagingIndicatorLayoutAttributes: UICollectionViewLayoutAttributes {
     }
 
     func configure(_ options: PagingOptions) {
-        if case let .visible(height, index, _, insets, cornerRadius) = options.indicatorOptions {
+        if case let .visible(height, index, _, insets, cornerRadius, shadowRadius, shadowOpacity, shadowColor, shadowOffset) = options.indicatorOptions {
             backgroundColor = options.indicatorColor
             self.cornerRadius = cornerRadius
+            self.shadowRadius = shadowRadius
+            self.shadowOpacity = shadowOpacity
+            self.shadowColor = shadowColor
+            self.shadowOffset = shadowOffset
             frame.size.height = height
 
             switch options.menuPosition {

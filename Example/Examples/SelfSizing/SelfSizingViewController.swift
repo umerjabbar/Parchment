@@ -21,6 +21,8 @@ final class SelfSizingViewController: PagingViewController {
     super.viewDidLoad()
     dataSource = self
     menuItemSize = .selfSizing(estimatedWidth: 100, height: 40)
+    menuItemSpacing = 0
+    menuItemLabelSpacing = 0
   }
 }
 

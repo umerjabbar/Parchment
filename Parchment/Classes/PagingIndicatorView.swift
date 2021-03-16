@@ -11,6 +11,10 @@ open class PagingIndicatorView: UICollectionReusableView {
         if let attributes = layoutAttributes as? PagingIndicatorLayoutAttributes {
             backgroundColor = attributes.backgroundColor
             layer.cornerRadius = attributes.cornerRadius ?? 0
+            layer.shadowColor = attributes.shadowColor?.cgColor
+            layer.shadowRadius = attributes.shadowRadius ?? 0
+            layer.shadowOffset = attributes.shadowOffset ?? .zero
+            layer.shadowOpacity = Float(attributes.shadowOpacity ?? 0)
         }
     }
 
